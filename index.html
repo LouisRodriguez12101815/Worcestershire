@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQLite Database Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>SQLite Database Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#query">Query Builder</a></li>
+                <li><a href="#records">View Records</a></li>
+                <li><a href="#insert">Add Data</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="database-info">
+            <h2>Database Connection Status</h2>
+            <div id="connection-status">
+                <span class="status-indicator" id="status-dot"></span>
+                <span id="status-text">Checking connection...</span>
+            </div>
+        </section>
+
+        <section id="tables">
+            <h2>Database Tables</h2>
+            <div id="tables-list">
+                <!-- Tables will be loaded dynamically -->
+            </div>
+        </section>
+
+        <section id="query">
+            <h2>SQL Query Interface</h2>
+            <div class="query-builder">
+                <textarea id="sql-query" placeholder="SELECT * FROM your_table_name;"></textarea>
+                <button onclick="executeQuery()">Execute Query</button>
+            </div>
+            <div id="query-results">
+                <!-- Query results will appear here -->
+            </div>
+        </section>
+
+        <section id="records">
+            <h2>Table Records</h2>
+            <select id="table-selector">
+                <option value="">Select a table...</option>
+            </select>
+            <div id="records-container">
+                <!-- Records will be displayed here -->
+            </div>
+        </section>
+
+        <section id="insert">
+            <h2>Add New Record</h2>
+            <form id="insert-form">
+                <div id="form-fields">
+                    <!-- Form fields will be generated based on selected table -->
+                </div>
+                <button type="submit">Insert Record</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>SQLite Database Web Interface - Learning DNS & Database Integration</p>
+    </footer>
+
+    <script src="js/database.js"></script>
+</body>
+</html>
